@@ -1,0 +1,33 @@
+/* Tekst svih linkova koji upućuju na neku od adresa koje pripadaju sajtu Google obojiti u zeleno. */
+
+a[href^="https://www.google.com"] {
+    color: green;
+}
+
+/* Tekst linka koji upućuje na LINK group web sajt obojiti u crvenu boju. */
+
+a[href*="link"] {
+    color: red;
+}
+
+/* Paragrafe unutar second-div elementa naizmenično obojiti u crvenu i plavu boju (Paragraph 4 crvena, Paragraph 5 plava, Paragraph 6 crvena, Paragraph 7 plava). */
+
+#second-div p:nth-last-child(2n+1) {
+    color: #f50505;
+}
+#second-div p:nth-last-child(even) {
+    color: hsl(240, 94%, 49%);
+}
+
+/* Na krajeve Paragraph 2 i Paragraph 3, korišćenjem CSS-a dodati tekst - NEW, žute boje. */
+
+#first-div > p::after {
+    content: " - NEW";
+    color: rgb(233, 233, 10);
+}
+
+/* Prelaskom miša preko Paragraph 10 elementa, njegov tekst treba da postane italic. */
+
+#first-div ~ p:last-child:hover {
+    font-style: italic;
+}
